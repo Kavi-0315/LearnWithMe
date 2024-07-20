@@ -1,0 +1,41 @@
+# Linked List Implementation in Python
+
+# This code snippet demonstrates a simple implementation of a singly linked list in Python.
+# A linked list is a linear data structure where elements are not stored in contiguous memory locations.
+# Each element (node) contains data and a reference (or pointer) to the next node in the sequence.
+
+# 1. Class Definition:
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.point = None
+
+# A `node` class is defined with an `__init__` method to initialize the node's data and the pointer to the next node (initialized as `None`).
+
+# 2. Creating Nodes:
+head = node(1)
+node2 = node(2)
+node3 = node(3)
+node4 = node(4)
+
+# Four nodes are created with data values 1, 2, 3, and 4, respectively.
+
+# 3. Linking Nodes:
+head.point = node2
+node2.point = node3
+node3.point = node4
+
+# The nodes are linked together to form the linked list:
+# - `head` points to `node2`
+# - `node2` points to `node3`
+# - `node3` points to `node4`
+
+# 4. Traversing the Linked List:
+cur = head
+while(cur is not None):
+    print(cur.data)
+    cur = cur.point
+
+# The linked list is traversed starting from the `head` node.
+# The data of each node is printed.
+# The pointer moves to the next node using the `point` attribute until it reaches the end of the list (`None`).
